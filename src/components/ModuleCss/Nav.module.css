@@ -1,0 +1,14 @@
+
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.button{
+    height: 40px;
+    width: 60px;
+    margin-top: 30px;
+}

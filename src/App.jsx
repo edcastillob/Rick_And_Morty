@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import { Cards, Nav  } from './components';
+import { Routes, Route } from 'react-router-dom'
+import { Cards, Nav, About, Detail, NotFound   } from './components';
 import axios from 'axios';
 import './App.css';
+
+
 
 
 export function App() {
@@ -26,18 +29,22 @@ const onClose = (id) => {
     setCharacters(characters.filter( (character) => character.id !== Number(id)))
 }
 
-// function onRandom() {
-//   let min = 1;
-//   let max = 826; 
-//   console.log(Math.floor((Math.random() * (max - min + 1)) + min))
-//   return Math.floor((Math.random() * (max - min + 1)) + min);
-// }
 
   return (
     <>
       
       <Nav onSearch = { onSearch } />
-      <Cards characters={ characters } onClose = { onClose }/>
+      
+
+        <Routes>
+          <Route exact path="/home" element={<Cards characters={ characters } onClose = { onClose }/> }/>
+          <Route exact path="/about" element={<About />}/>
+          <Route exact path="/detail/:id" element={<Detail />}/>        
+         
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+
+
     </>
   )
 }
