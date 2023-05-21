@@ -12,12 +12,13 @@ export const SearchBar = ({ onSearch }) =>{
          setId(value);         
         }
 
-        // function random(){
-        //   let min = 1;
-        //   let max = 826; 
-        //   // console.log(Math.floor((Math.random() * (max - min + 1)) + min))
-        //  return Math.floor((Math.random() * (max - min + 1)) + min);
-        // }
+        const random = () => {        
+         let min = 1;
+         let max = 826;            
+         let idRandom=Math.floor((Math.random() * (max - min + 1)) + min);          
+         onSearch(idRandom);
+        }  
+        
     return (
        <div>
           <input className={style.searchInput} 
@@ -26,15 +27,11 @@ export const SearchBar = ({ onSearch }) =>{
           name= 'id'
           value = { id }
           onChange= { handleChange }
-          />
-         
-                 
+          />                
         
-            <button className={style.button} onClick={() => { onSearch(id); setId("") }}>Agregar</button> 
-         
-
-        
-
+            <button className={style.button} onClick={() => { onSearch(id); setId("") }}>Agregar</button>            
+            <button className={style.button} onClick={random} >Personaje random</button> 
+            
        </div>
     );
  }
