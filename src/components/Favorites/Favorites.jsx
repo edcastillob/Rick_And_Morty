@@ -1,48 +1,56 @@
-import { connect } from 'react-redux';
+import { useState } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import  Card   from '../Card/Card';
+import { filterCards, orderCards } from '../../redux/actions/actions';
 
  function Favorites({ myFavorites}) {
+
+     const dispatch = useDispatch(); 
+     const [aux, setAux] = useState(false);
+
+    const handleOrder = (e) => { 
+        e.preventDefault();
+        dispatch(orderCards(e.target.value));
+        setAux(true);
+     }
+
+     const handleFilter = (e) => { 
+        e.preventDefault();
+        dispatch(filterCards(e.target.value))
+      }
   
     return( 
      
     <div>
-       {/* {
-          myFavorites.map((myFavorites, index) => {
-             return (
-                <Card 
-                key =     { index }// es un identificador para react 
-                id =      { myFavorites.id }//es un identificador para el programador
-                name =    { myFavorites.name } 
-                image   = { myFavorites.image }
-                status =  { myFavorites.status } 
-                gender  = { myFavorites.gender }
-                species = { myFavorites.species }
-               //  onClose = { onClose }
-                origin  = { myFavorites.origin?.name} 
-            />               
-             )
-          })
-       } */}
 
-{
-                myFavorites?.map(character => {
-                    return (
-                        <Card 
-                            key={character.id}
-                            id= {character.id}
-                            name={character.name}
-                            species={character.species}
-                            gender={character.gender}
-                            origin = {character.origin}
-                            status ={character.status}
-                            image={character.image}
-                            
-                        />
-                    )
-                })
-            }
+        <select onChange={ handleOrder }>
+            <option value="A">Ascendente</option>
+            <option value="D">Descendente</option>
+        </select>
 
-
+        <select onChange={ handleFilter }>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Genderless">Genderless</option>
+            <option value="unknown">unknown</option>
+            <option value="allCharacters">All Characters</option>
+        </select>
+        {
+        myFavorites?.map(character => {
+          return (  
+            <Card 
+            key={character.id}
+            id= {character.id}
+            name={character.name}
+            species={character.species}
+            gender={character.gender}
+            origin = {character.origin}
+            status ={character.status}
+            image={character.image}                            
+            />
+            )
+        })
+    }
     </div>
     )
  }
