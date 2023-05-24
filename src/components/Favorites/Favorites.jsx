@@ -11,7 +11,8 @@ import { filterCards, orderCards } from '../../redux/actions/actions';
     const handleOrder = (e) => { 
         e.preventDefault();
         dispatch(orderCards(e.target.value));
-        setAux(true);
+        aux ?  setAux(false) : setAux(true);
+        
      }
 
      const handleFilter = (e) => { 
@@ -24,11 +25,13 @@ import { filterCards, orderCards } from '../../redux/actions/actions';
     <div>
 
         <select onChange={ handleOrder }>
+            <option>-- Orientation --</option>
             <option value="A">Ascendente</option>
             <option value="D">Descendente</option>
         </select>
 
         <select onChange={ handleFilter }>
+            <option value="allCharacters">-- Gender --</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Genderless">Genderless</option>

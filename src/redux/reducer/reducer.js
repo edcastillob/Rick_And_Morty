@@ -17,10 +17,11 @@ const rootReducer = ( state = initialState, actions ) => {
          
         
         case REMOVE_FAV:
-            const favorites = state.myFavorites.filter( e => e.id !==  Number(actions.payload));
+            const favorites = state.allCharacters.filter( e => e.id !==  Number(actions.payload));
             return {
                 ...state,
-                myFavorites: favorites
+                myFavorites: favorites,
+                allCharacters: favorites
             }
 
         case FILTER:

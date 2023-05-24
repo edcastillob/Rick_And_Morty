@@ -59,9 +59,8 @@ const onClose = (id) => {
     <>
        {
        location.pathname !== '/' && <Nav onSearch = { onSearch } setAccess={setAccess} />
-       }
-       
-      <hr />
+       }       
+    
         <Routes>
           <Route exact path="/" element={<Login login = { login }/> }/>
           <Route exact path="/home" element={<Cards characters={ characters } onClose = { onClose }/> }/>

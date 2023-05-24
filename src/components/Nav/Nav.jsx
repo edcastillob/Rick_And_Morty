@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { SearchBar } from '../SearchBar';
-import style from '../ModuleCss/SearchBar.module.css';
+import style from '../ModuleCss/Nav.module.css';
+
 
 
 
@@ -8,8 +9,7 @@ export const Nav = ({ onSearch, setAccess }) => {
 
   return (
     <div className = { style.nav }>
-
-        <SearchBar onSearch = { onSearch } /> 
+        <img className = { style.img } src="images/logo@2x.png" alt="Rick & Morty" />        
         <NavLink to="/home">
           <button className={ style.button }>Home</button>
         </NavLink>
@@ -19,7 +19,9 @@ export const Nav = ({ onSearch, setAccess }) => {
         <NavLink to="/about">        
         <button className={ style.button }>About</button>
         </NavLink>
-        <button onClick={() =>setAccess(false)}>LogOut</button>
+        <SearchBar onSearch = { onSearch } /> 
+        <button className={ style.button } onClick={() =>setAccess(false)}>LogOut</button>        
+
       
     </div>
     

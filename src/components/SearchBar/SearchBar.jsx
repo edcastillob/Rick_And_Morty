@@ -20,7 +20,7 @@ export const SearchBar = ({ onSearch }) =>{
         }  
         
     return (
-       <div>
+       <div >
           <input className={style.searchInput} 
           type='search' 
           placeholder='ID...' 
@@ -29,8 +29,8 @@ export const SearchBar = ({ onSearch }) =>{
           onChange= { handleChange }
           />                
         
-            <button className={style.button} onClick={() => { onSearch(id); setId("") }}>Agregar</button>            
-            <button className={style.button} onClick={random} >Personaje random</button> 
+            <button className={style.button} onClick={() => { onSearch(id); setId("") }}>ADD</button>            
+            <button className={style.button} onClick={random} >ADD Random</button> 
             
        </div>
     );
