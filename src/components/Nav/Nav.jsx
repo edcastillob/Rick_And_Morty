@@ -13,6 +13,9 @@ export const Nav = ({ onSearch, setAccess }) => {
         <NavLink to="/home">
           <button className={ style.button }>Home</button>
         </NavLink>
+        <NavLink to="/favorites">
+          <button className={ style.button }>Favorites</button>
+        </NavLink>
         <NavLink to="/about">        
         <button className={ style.button }>About</button>
         </NavLink>

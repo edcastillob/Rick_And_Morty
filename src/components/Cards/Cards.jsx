@@ -1,4 +1,4 @@
-import { Card }  from '../Card/Card';
+import  Card   from '../Card/Card';
 import style from '../ModuleCss/Cards.module.css';
 
 
@@ -9,18 +9,18 @@ export  function Cards({ characters, onClose }) {
     
    <div className = {style.cards}>
       {
-         characters.map((characters, index) => {
+         characters?.map((characters, index) => {
             return (
                <Card 
                key =     { index }// es un identificador para react 
                id =      { characters.id }//es un identificador para el programador
                name =    { characters.name } 
-               image   = { characters.image }
-               status =  { characters.status } 
-               gender  = { characters.gender }
                species = { characters.species }
-               onClose = { onClose }
+               gender  = { characters.gender }
                origin  = { characters.origin.name} 
+               status =  { characters.status } 
+               image   = { characters.image }
+               onClose = { onClose }
            />               
             )
          })
