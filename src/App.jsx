@@ -63,12 +63,13 @@ const onClose = (id) => {
        }       
     
         <Routes>
+          <Route  path="*" element={<NotFound />}/>         
           <Route exact path="/" element={<Login login = { login }/> }/>
           <Route exact path="/home" element={<Cards characters={ characters } onClose = { onClose }/> }/>
           <Route exact path="/about" element={<About />}/>
           <Route exact path="/detail/:id" element={<Detail />}/>  
           <Route exact path="/favorites" element={<Favorites/>}/>         
-          <Route path="*" element={<NotFound />} />
+          {/* <Route path="*" element={<Navigate to="/notFound"/>} /> */}
         </Routes>
 
 

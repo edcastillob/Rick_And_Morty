@@ -25,7 +25,7 @@ import style from '../ModuleCss/Favorites.module.css';
      <>
     <div>
         <select className={style.select} onChange={ handleOrder }>
-            <option>-- Orientation --</option>
+            <option value="A">-- Orientation --</option>
             <option value="A">Ascendente</option>
             <option value="D">Descendente</option>
         </select>
