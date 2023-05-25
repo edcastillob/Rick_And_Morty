@@ -16,4 +16,25 @@
     <li>LogOut</li>
 </ul>
 
-<p>Se adjuntaran algunas pantallas de la app</p>
+<p>Capturas de la app</p>
+
+<div align="center"></div>
+<h2>Imagen de Login</h2>
+<img  width="800" src="https://raw.githubusercontent.com/edcastillob/PracticeCode/main/OtherPractice/RaM/Login.JPG" alt="Login">
+
+<hr/>
+
+<h2>Home</h2>
+<img  width="800" src="https://raw.githubusercontent.com/edcastillob/PracticeCode/main/OtherPractice/RaM/Home.JPG" alt="Home">
+
+<hr/>
+
+<h2>Carga de personajes</h2>
+<img  width="800" src="https://raw.githubusercontent.com/edcastillob/PracticeCode/main/OtherPractice/RaM/Personajes%20Cargados.JPG" alt="Personajes">
+
+<hr/>
+
+<h2>Carga de personajes</h2>
+<img  width="800" src="https://raw.githubusercontent.com/edcastillob/PracticeCode/main/OtherPractice/RaM/About.JPG" alt="About">
+
+</div>
