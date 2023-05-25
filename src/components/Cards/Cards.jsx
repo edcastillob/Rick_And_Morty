@@ -1,5 +1,6 @@
 import  Card   from '../Card/Card';
 import style from '../ModuleCss/Cards.module.css';
+import {Welcome} from '../Welcome'
 
 
 
@@ -8,6 +9,10 @@ export  function Cards({ characters, onClose }) {
    return( 
     
    <div className = {style.cards}>
+      {
+         !characters.length  && <Welcome />
+      }
+     
       {
          characters?.map((characters, index) => {
             return (

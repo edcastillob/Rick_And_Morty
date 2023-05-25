@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import  Card   from '../Card/Card';
 import { filterCards, orderCards } from '../../redux/actions/actions';
+import style from '../ModuleCss/Favorites.module.css';
 
  function Favorites({ myFavorites}) {
 
@@ -21,16 +22,15 @@ import { filterCards, orderCards } from '../../redux/actions/actions';
       }
   
     return( 
-     
+     <>
     <div>
-
-        <select onChange={ handleOrder }>
+        <select className={style.select} onChange={ handleOrder }>
             <option>-- Orientation --</option>
             <option value="A">Ascendente</option>
             <option value="D">Descendente</option>
         </select>
 
-        <select onChange={ handleFilter }>
+        <select  className={style.select} onChange={ handleFilter }>
             <option value="allCharacters">-- Gender --</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
@@ -38,6 +38,9 @@ import { filterCards, orderCards } from '../../redux/actions/actions';
             <option value="unknown">unknown</option>
             <option value="allCharacters">All Characters</option>
         </select>
+    </div>
+    <div  className = {style.cards}>
+
         {
         myFavorites?.map(character => {
           return (  
@@ -55,6 +58,7 @@ import { filterCards, orderCards } from '../../redux/actions/actions';
         })
     }
     </div>
+    </>
     )
  }
 

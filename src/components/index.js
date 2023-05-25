@@ -8,3 +8,4 @@
     export * from './Nav';
     export * from './NotFound';
     export * from './SearchBar';
+    export * from './Welcome';

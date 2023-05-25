@@ -1,0 +1,17 @@
+
+
+  .img {
+    width: 500px;
+    height: 400px;
+    border-radius: 15px;
+    opacity: 0.6;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+
+  .text{
+    font-size: 25;
+    background-image: url('../public/images/spa.gif'); 
+    border-radius: 5px;
+    color: rgb(223, 241, 241);
+    padding: 5px;
+  }

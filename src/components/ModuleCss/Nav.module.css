@@ -1,12 +1,15 @@
 
 
 .nav{
+   
     display: flex;
     justify-content: right;
     gap: 20px;
     padding-top: 10px;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+    background-image: url('../public/images/spa.gif'); 
     height: 60px;
+    
     
 }
 

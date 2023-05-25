@@ -11,7 +11,7 @@ import Favorites from './components/Favorites/Favorites';
 export function App() {
    
    const [characters, setCharacters] = useState([]); 
-   const [access, setAccess] = useState(true);
+   const [access, setAccess] = useState(false);
 
    const EMAIL = 'edwar.castillo@gmail.com';
    const PASSWORD = '1234567';
@@ -21,15 +21,16 @@ export function App() {
   
    
    function onSearch(id) {
-
+   
+   if (id > 826) return window.alert('¡this character does not exist!');
    let existe = (characters.filter( (character) => character.id === Number(id)));
-   if (existe.length > 0) return (window.alert('¡El personaje con este ID ya fué agregado!'));
+   if (existe.length > 0) return (window.alert('¡The character already exists!'));
    
    axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
       if (data.name) {
          setCharacters((oldChars) => [...oldChars, data]);
       } else {
-         window.alert('¡No hay personajes con este ID!');
+         window.alert('¡this character does not exist!');
       }
    });
   }

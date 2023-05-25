@@ -8,6 +8,7 @@ import style from '../ModuleCss/Nav.module.css';
 export const Nav = ({ onSearch, setAccess }) => {
 
   return (
+   
     <div className = { style.nav }>
         <img className = { style.img } src="images/logo@2x.png" alt="Rick & Morty" />        
         <NavLink to="/home">
@@ -20,12 +21,13 @@ export const Nav = ({ onSearch, setAccess }) => {
         <button className={ style.button }>About</button>
         </NavLink>
         <SearchBar onSearch = { onSearch } /> 
-        <button className={ style.button } onClick={() =>setAccess(false)}>LogOut</button>        
+        <button className={ style.button } onClick={() =>setAccess(false)}>LogOut</button> 
+        <p></p>       
 
       
     </div>
     
-   
+ 
   )
 }
 
