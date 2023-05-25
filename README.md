@@ -15,6 +15,9 @@
     <li>Los imput de login validados</li>
     <li>LogOut</li>
 </ul>
+ <p>Deploy en netlify...</p>
+    <h2><a href="https://646fdd33cf50d909a04c14f0--rick-and-morty-edcastillob.netlify.app/">Ver API</a></h2>
+   </div>
 
 <p>Capturas de la app</p>
 
