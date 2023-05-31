@@ -1,0 +1,16 @@
+body { 
+  background: rgb(0, 2, 32);
+  background-image: url('../public/images/bg3.png');  
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+}
+
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .container { 
+     width: 100vw;
+  }
+}

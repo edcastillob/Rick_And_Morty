@@ -26,7 +26,8 @@ export function App() {
    let existe = (characters.filter( (character) => character.id === Number(id)));
    if (existe.length > 0) return (window.alert('¡The character already exists!'));
    
-   axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+   // axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+   axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
       if (data.name) {
          setCharacters((oldChars) => [...oldChars, data]);
       } else {
