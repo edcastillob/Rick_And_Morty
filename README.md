@@ -1,6 +1,6 @@
 <div align="center">
     <h2>Rick & Morty</h2>
-    <img  width="150" src="https://raw.githubusercontent.com/edcastillob/Rick_And_Morty/main/public/ram.png" alt="Img Rick and Morty">
+    <img  width="150" src="https://raw.githubusercontent.com/edcastillob/Rick_And_Morty/Client/main/public/ram.png" alt="Img Rick and Morty">
 </div>
 
 <p>Proyecto de integración de la API Rick and Morty, de Henry, este desarrollo se inicia en el M2, aún no esta finalizado actualmente me encuentro agregandole nuevas feature sin embargo hasta la fecha se encuentra completo a nivel de front</p>
