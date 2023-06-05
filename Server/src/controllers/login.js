@@ -3,12 +3,19 @@ const {users} = require('../utils/users.js')
 const login = (req, res) => {
       
     const { email, password } = req.query;
-    if (users.email === email && users.password === password){
-        return res.status(200).json({access:true})
-    }else{
-        return res.status(200).json({access:false})
-    }
+
+      const userLogin = users.find( user => users.email === email && users.password === password)
+    
+      if(userLogin) {
+          return res.status(200).json({access:true})
+      }
+
+      return res.status(404).json({access:false}) 
+
+   
 }
 
-module.exports = login;
+module.exports = {
+    login
+};
     
