@@ -4,7 +4,7 @@ const login = (req, res) => {
       
     const { email, password } = req.query;
 
-      const userLogin = users.find( user => users.email === email && users.password === password)
+      const userLogin = users.find( users => users.email === email && users.password === password)
     
       if(userLogin) {
           return res.status(200).json({access:true})

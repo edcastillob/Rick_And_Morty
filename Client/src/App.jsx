@@ -11,10 +11,10 @@ import Favorites from './components/Favorites/Favorites';
 export function App() {
    
    const [characters, setCharacters] = useState([]); 
-   const [access, setAccess] = useState(false);
+   const [access, setAccess] = useState(true);
 
-   const EMAIL = 'edwar.castillo@gmail.com';
-   const PASSWORD = '1234567';
+   // const EMAIL = 'edwar.castillo@gmail.com';
+   // const PASSWORD = '1234567';
    
    const location = useLocation();
    const navigate = useNavigate();
@@ -37,14 +37,26 @@ export function App() {
   }
 
   
+//   function login(userData) {
+//      if (userData.password === PASSWORD && userData.email === EMAIL) {
+//         setAccess(true);
+//         navigate('/home');
+//      }else{
+//       window.alert('Verifique sus credenciales de acceso')
+//      }
+//   }
   function login(userData) {
-     if (userData.password === PASSWORD && userData.email === EMAIL) {
-        setAccess(true);
-        navigate('/home');
-     }else{
-      window.alert('Verifique sus credenciales de acceso')
-     }
-  }
+   const { email, password } = userData;
+   const URL = 'http://localhost:3001/rickandmorty/login/';
+   axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+      const { access } = data;
+      setAccess(data);
+      access && navigate('/home');
+      if(!access) throw Error()
+         access && navigate('/home');
+             
+   });
+}
 
 
   useEffect(() => {
