@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import { Cards, Nav, About, Detail, NotFound, Login } from './components';
+import  { Cards, Nav, About, Detail, NotFound, Login } from './components';
 import './App.css';
 import Favorites from './components/Favorites/Favorites';
-
-
 
 
 export function App() {
@@ -20,20 +18,24 @@ export function App() {
    const navigate = useNavigate();
   
    
-   function onSearch(id) {
-   
+   const onSearch = async(id) => {
+
+   try {
    if (id > 826) return window.alert('¡this character does not exist!');
    let existe = (characters.filter( (character) => character.id === Number(id)));
-   if (existe.length > 0) return (window.alert('¡The character already exists!'));
+   if (existe.length > 0) return (window.alert('¡The character already exists!'));   
    
-   // axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-   axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+   const {data} = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
       if (data.name) {
          setCharacters((oldChars) => [...oldChars, data]);
-      } else {
+     
+      }
+   
+      } catch (error) {
          window.alert('¡this character does not exist!');
       }
-   });
+   
+   
   }
 
   
@@ -66,7 +68,7 @@ export function App() {
 
 
 const onClose = (id) => {
-    setCharacters(characters.filter( (character) => character.id !== Number(id)))
+    setCharacters(characters.filter( (character) => character.id !== id))
 }
 
   return (

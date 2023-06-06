@@ -11,36 +11,47 @@ const rootReducer = ( state = initialState, actions ) => {
         case ADD_FAV:
             return {
                 ...state,
-                myFavorites: payload,
-                allCharacters: payload
+                myFavorites: actions.payload,
+                allCharacters: actions.payload
             }
          
         
         case REMOVE_FAV:            
+        
             return {
                 ...state,
-                myFavorites: payload
-                
+                myFavorites: actions.payload
             }
 
         case FILTER:
-            const filterCharacter = state.allCharacters.filter(e => e.gender === actions.payload);
+            //const filterCharacter = state.allCharacters.filter(e => e.gender === actions.payload);
+            // return {
+            //     ...state,
+            //     myFavorites: 
+            //     actions.payload !== 'allCharacters' 
+            //     ? filterCharacter
+            //     : [...state.allCharacters]
+            if(actions.payload === 'allCharacters') return{
+                ...state,
+                 myFavorites: state.allCharacters
+                // myFavorites: state.myFavorites
+            }
+            let allCharCopy = [...state.allCharacters];
+            let filteredCharacters = allCharCopy.filter(character => character.gender === actions.payload)
             return {
                 ...state,
-                myFavorites: 
-                actions.payload !== 'allCharacters' 
-                ? filterCharacter
-                : [...state.allCharacters]
+                myFavorites: filteredCharacters
             }
+            
         
-        case ORDER:
-            const allCharacterCopy = [...state.allCharacters];
+        case ORDER:          
+        const favoritesCopy = [...state.myFavorites]
             return {
                 ...state,
                 myFavorites:
                     actions.payload === 'A'
-                    ? allCharacterCopy.sort((a, b) => a.id - b.id)
-                    : allCharacterCopy.sort((a, b) => b.id - a.id)
+                    ? favoritesCopy.sort((a, b) => a.id - b.id)
+                    : favoritesCopy.sort((a, b) => b.id - a.id)
 
             }
 
