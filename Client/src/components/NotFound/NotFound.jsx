@@ -3,7 +3,7 @@
         
     export const NotFound = () => {
       return (
-        <div style={{backgroundColor: "pink", height: "300px", textAlign: "center"}}>
+        <div style={{backgroundColor: "black", height: "300px", textAlign: "center", color: 'white'}}>
             <div>
               <h1>404</h1>
               <h2>Not Found</h2>

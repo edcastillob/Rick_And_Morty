@@ -9,44 +9,32 @@ import Favorites from './components/Favorites/Favorites';
 export function App() {
    
    const [characters, setCharacters] = useState([]); 
-   const [access, setAccess] = useState(true);
-
-   // const EMAIL = 'edwar.castillo@gmail.com';
-   // const PASSWORD = '1234567';
+   const [access, setAccess] = useState(true);   
    
    const location = useLocation();
-   const navigate = useNavigate();
-  
+   const navigate = useNavigate();  
    
    const onSearch = async(id) => {
 
    try {
    if (id > 826) return window.alert('¡this character does not exist!');
-   let existe = (characters.filter( (character) => character.id === Number(id)));
-   if (existe.length > 0) return (window.alert('¡The character already exists!'));   
-   
+
+   let existe = (characters.filter( (character) => character.id === id));
+   if (existe.length > 0) return (window.alert('¡The character already exists!')); 
+
    const {data} = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
       if (data.name) {
          setCharacters((oldChars) => [...oldChars, data]);
-     
       }
    
       } catch (error) {
          window.alert('¡this character does not exist!');
       }
    
-   
   }
 
   
-//   function login(userData) {
-//      if (userData.password === PASSWORD && userData.email === EMAIL) {
-//         setAccess(true);
-//         navigate('/home');
-//      }else{
-//       window.alert('Verifique sus credenciales de acceso')
-//      }
-//   }
+
   function login(userData) {
    const { email, password } = userData;
    const URL = 'http://localhost:3001/rickandmorty/login/';
@@ -77,15 +65,14 @@ const onClose = (id) => {
        location.pathname !== '/' && <Nav onSearch = { onSearch } setAccess={setAccess} />
        }       
     
-        <Routes>
+      <Routes>
           <Route  path="*" element={<NotFound />}/>         
           <Route exact path="/" element={<Login login = { login }/> }/>
           <Route exact path="/home" element={<Cards characters={ characters } onClose = { onClose }/> }/>
           <Route exact path="/about" element={<About />}/>
           <Route exact path="/detail/:id" element={<Detail />}/>  
-          <Route exact path="/favorites" element={<Favorites/>}/>         
-          {/* <Route path="*" element={<Navigate to="/notFound"/>} /> */}
-        </Routes>
+          <Route exact path="/favorites" element={<Favorites/>}/>  
+      </Routes>
 
 
     </>

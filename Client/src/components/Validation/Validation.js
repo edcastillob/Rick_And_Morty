@@ -1,5 +1,6 @@
 
 export const Validation = (userData)=>{
+    
     const errors={}
 
     if(!/\S+@\S+\.\S+/.test(userData.email)){
@@ -18,6 +19,8 @@ export const Validation = (userData)=>{
     if (userData.password.length <6 || userData.password.length >10) {
         errors.password='La longitud de la contraseña es entre (6) y (10) caracteres'
     }
+
+
 
     return errors;
 }

@@ -1,4 +1,8 @@
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .nav{
    
@@ -8,6 +12,8 @@
     padding-top: 10px;    
     background-image: url('../img/spa.gif'); 
     height: 60px;   
+
+  
     
 }
 
@@ -58,3 +64,6 @@ img{
   .button:active {
     top: 2px;
   }
+
+
+ 

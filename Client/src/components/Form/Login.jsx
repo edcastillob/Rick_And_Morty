@@ -15,30 +15,32 @@ import { useState } from "react";
         email: '',
         password: '',
       });
-
+      
       const handleChange = e => { 
        
         setUserData({
           ...userData,
           [e.target.name]: e.target.value
         })
-
+        
         setErrors(
           Validation({
             ...errors,
             [e.target.name]: e.target.value
           })
-        )   
-       }
-
+          )   
+        }
+        
 
        const handleSubmit = e => { 
             e.preventDefault();
-            login(userData)
+            login(userData)            
         }
 
+       
       return (
         <form  className={ style.form } onSubmit={handleSubmit}>
+      
           <h1 className={style.formTitle}>Login</h1>
           <h4 className={style.formAccess}>Ingresa con edwar.castillo@gmail.com pass: 1234567</h4>
           <div className={style.formContainer }>

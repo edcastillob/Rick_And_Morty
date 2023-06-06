@@ -22,6 +22,7 @@ export const Nav = ({ onSearch, setAccess }) => {
   return (
    
     <div className = { style.nav }>
+   
         <img className = { style.img } src="images/logo@2x.png" alt="Rick & Morty" />        
         <NavLink to="/home">
           <button className={ style.button }>Home</button>
@@ -33,7 +34,7 @@ export const Nav = ({ onSearch, setAccess }) => {
         <button className={ style.button }>About</button>
         </NavLink>
         <SearchBar onSearch = { onSearch } /> 
-        <button className={style.button} onClick={random} >ADD Random</button>               
+        <button className={style.button} onClick={random} >Random</button>               
         <button title='HELP' className={style.button} onClick={legends} >❔</button>         
         <button className={ style.button } onClick={() =>setAccess(false)}>LogOut</button> 
         <p></p>       
