@@ -15,7 +15,7 @@ export const SearchBar = ({ onSearch }) =>{
  
         
     return (
-       <div >
+       <div className={style.container} >
           <input className={style.searchInput} 
           type='search' 
           placeholder='ID...' 

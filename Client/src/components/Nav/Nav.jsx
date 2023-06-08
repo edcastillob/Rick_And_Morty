@@ -33,8 +33,8 @@ export const Nav = ({ onSearch, setAccess }) => {
         <NavLink to="/about">        
         <button className={ style.button }>About</button>
         </NavLink>
-        <SearchBar onSearch = { onSearch } /> 
         <button className={style.button} onClick={random} >Random</button>               
+        <SearchBar onSearch = { onSearch } /> 
         <button title='HELP' className={style.button} onClick={legends} >❔</button>         
         <button className={ style.button } onClick={() =>setAccess(false)}>LogOut</button> 
         <p></p>       

@@ -1,5 +1,12 @@
+.container{
+   
+  display: flex;
+  justify-content: space-between;
+ 
+}
+
 .searchInput {
-    width: 200px;
+    width: 150px;
     height: 35px;
     padding: 16px;
     border: 3px solid #434144;
@@ -18,15 +25,15 @@
 
 
 .button {
-    min-width: 55px;
+    min-width: 35px;
     height: 35px;
     color: #fff;
-    padding: 5px 10px;
+    padding: 10px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
-    display: inline;
+    position: static;
+    display: inline-flex;
     outline: none;
     border-radius: 5px;
     border: none;
@@ -34,7 +41,7 @@
     background: #212529;
     z-index: 1;
     margin-right: 20px;
-    font-size: 15px;
+    font-size: 1rem;
   }
   .button:hover:after {
     width: 100%;
