@@ -42,7 +42,7 @@ import { useState } from "react";
         <form  className={ style.form } onSubmit={handleSubmit}>
       
           <h1 className={style.formTitle}>Login</h1>
-          <h4 className={style.formAccess}>Ingresa con edwar.castillo@gmail.com pass: 1234567</h4>
+          {/* <h4 className={style.formAccess}>Ingresa con edwar.castillo@gmail.com pass: 1234567</h4> */}
           <div className={style.formContainer }>
             
             <label className={style.textLabel} htmlFor="email">Email:</label>

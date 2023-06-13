@@ -1,21 +1,29 @@
 import  Card   from '../Card/Card';
+
 import style from '../ModuleCss/Cards.module.css';
-import {Welcome} from '../Welcome'
+import { Welcome } from '../../components'
+import { Character } from '../Title';
+
 
 
 
 export  function Cards({ characters, onClose }) {
   
    return( 
+    <>
+   {characters.length  && <Character />    }        
     
-   <div className = {style.cards}>
+    <div className = {style.cards}>
       {
-         !characters.length  && <Welcome />
+         !characters.length  && <Welcome />           
       }
+           
+      
      
       {
          characters?.map((characters, index) => {
             return (
+              
                <Card 
                key =     { index }// es un identificador para react 
                id =      { characters.id }//es un identificador para el programador
@@ -30,8 +38,9 @@ export  function Cards({ characters, onClose }) {
             )
          })
       }
+     
    </div>
-   )
+   </>)
 }
 
 

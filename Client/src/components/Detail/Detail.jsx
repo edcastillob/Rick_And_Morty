@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import style from '../ModuleCss/Detail.module.css';
 import  axios  from 'axios';
+// import { Footer } from '../Footer';
 
     
     export const Detail = () => {   
@@ -26,10 +27,13 @@ import  axios  from 'axios';
 
       return (
          <>
-            <h1></h1>
+            <br />
             <div className={style.container}> 
+            <hr />
             <h2 className={ style.card_info }>Name: { character.name }</h2> 
-            <h2 className={ style.card_info }>ID: { character.id }</h2>            
+            <h2 className={ style.card_info }>ID: { character.id }</h2> 
+            <br />
+                     
             <div className={ style.card}>          
             <img className = {style.img} src={ character.image } alt= { character.name } />  
             </div>    
@@ -42,6 +46,9 @@ import  axios  from 'axios';
            
             </div>       
             </div>
+            
+        
+
         </>
       )
     }

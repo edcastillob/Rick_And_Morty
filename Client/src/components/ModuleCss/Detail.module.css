@@ -1,7 +1,10 @@
 .container{
-    border: 2px solid black;
+    border: 2px solid rgb(255, 255, 255);
     padding: 20;
     margin: 5px;
+    position: relative;
+  
+
 }
 
 .card {
@@ -67,5 +70,6 @@
     font-size: 18px;
     margin-top: 5px;
   }
+
 
   
