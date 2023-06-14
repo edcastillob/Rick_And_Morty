@@ -3,6 +3,7 @@ import { connect, useDispatch } from 'react-redux';
 import  Card   from '../Card/Card';
 import { filterCards, orderCards } from '../../redux/actions/actions';
 import style from '../ModuleCss/Favorites.module.css';
+import { FavoriteTitle } from '../Title';
 
  function Favorites({ myFavorites}) {
 
@@ -23,6 +24,7 @@ import style from '../ModuleCss/Favorites.module.css';
   
     return( 
      <>
+     <FavoriteTitle />
     <div>
         <select className={style.select} onChange={ handleOrder }>
             <option value="A">-- Orientation --</option>

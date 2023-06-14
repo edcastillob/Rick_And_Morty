@@ -1,3 +1,5 @@
 
 
-    export * from './Character';
+    export * from './Title';
+    export * from './AboutTitle';
+    export * from './FavoriteTitle';

@@ -2,13 +2,14 @@ import logo from '../../../public/EC.png';
 import style from '../ModuleCss/About.module.css';
 import ecpic from '../../../public/images/ecpic.jpg';
 import { Footer } from '../Footer';
+import { AboutTitle } from '../Title';
 
     
     export const About = () => {
       return (
         <>
+        <AboutTitle />   
         <div>          
-            
         <img className={style.logo} src={logo} alt="Logo EdwarCastillo" />               
         <div className={style.card}>
         <div className={style.cardChildren}><img className={style.ed} src={ecpic} alt="Dev" />  </div>

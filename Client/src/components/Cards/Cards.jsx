@@ -2,7 +2,7 @@ import  Card   from '../Card/Card';
 
 import style from '../ModuleCss/Cards.module.css';
 import { Welcome } from '../../components'
-import { Character } from '../Title';
+import { Title } from '../Title';
 
 
 
@@ -11,7 +11,7 @@ export  function Cards({ characters, onClose }) {
   
    return( 
     <>
-   {characters.length  && <Character />    }        
+   {characters.length  && <Title />    }        
     
     <div className = {style.cards}>
       {
