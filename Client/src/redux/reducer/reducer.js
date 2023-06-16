@@ -17,9 +17,10 @@ const rootReducer = ( state = initialState, actions ) => {
          
         
         case REMOVE_FAV:            
-        
+            
             return {
                 ...state,
+                // myFavorites: favFilter,
                 myFavorites: actions.payload
             }
 

@@ -50,8 +50,7 @@ export function App() {
 
 const login = async (userData) => {
    try {
-      const { email, password } = userData;
-      console.log(userData)
+      const { email, password } = userData;      
       const URL = 'http://localhost:3001/rickandmorty/login/';
       const {data} = await axios(URL + `?email=${email}&password=${password}`)
       const { access } = data;     
