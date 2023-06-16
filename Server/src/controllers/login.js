@@ -1,19 +1,39 @@
-const { User } = require('../DB_connection')
+// const { User } = require('../DB_connection')
 
-const login = async(req, res) => { 
+// const login = async(req, res) => { 
     
-    try {
-        const { email, password} = req.body;
-        if(!email || !password ) return res.status(400).send('Faltan datos');
+//     try {
+//         const { email, password} = req.body;
+//         if(!email || !password ) return res.status(400).send('Faltan datos');
         
-        const user = await User.findOne( { where: {email}})
-        if (!user) return res.status(400).send('Usuario no encontrado');
+//         const user = await User.findOne( { where: {email}})
+//         if (!user) return res.status(400).send('Usuario no encontrado');
 
-        if (user.password !== password) return res.status(403).send('Password Incorrecto');
-        return res.status(200).json({access:true});
+//         if (user.password !== password) return res.status(403).send('Password Incorrecto');
+//         return res.status(200).json({access:true});
+//     } catch (error) {
+//         res.status(500).json({ error: error.message})
+//     }
+//  }
+
+// module.exports = login;
+
+
+const { User } = require('../DB_connection')
+const login = async(req, res) => {
+    const { email, password } = req.query;
+    try {
+    if(!email || !password) return res.status(400).send('Faltan datos')
+    const user = await User.findOne({
+        where:{
+            email
+        }
+    })
+    if(!user) return res.status(404).send('Usuario no encontrado')
+    if(user.password===password) return res.status(200).json({access:true})
+    return res.status(403).send('Contraseña incorrecta')
     } catch (error) {
         res.status(500).json({ error: error.message})
     }
- }
-
-module.exports = login;
+}
+module.exports = login

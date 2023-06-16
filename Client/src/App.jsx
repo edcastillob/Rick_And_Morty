@@ -35,19 +35,33 @@ export function App() {
 
   
 
-  function login(userData) {
-   const { email, password } = userData;
-   const URL = 'http://localhost:3001/rickandmorty/login/';
-   axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-      const { access } = data;
-      setAccess(data);
-      access && navigate('/home');
-      if(!access) throw Error()
-         access && navigate('/home');
+//   async function login(userData) {
+//    const { email, password } = userData;
+//    const URL = 'http://localhost:3001/rickandmorty/login/';
+//    await axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+//       const { access } = data;
+//       setAccess(data);
+//       access && navigate('/home');
+//       if(!access) throw Error()
+//          access && navigate('/home');
              
-   });
-}
+//    });
+// }
 
+const login = async (userData) => {
+   try {
+      const { email, password } = userData;
+      console.log(userData)
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      const {data} = await axios(URL + `?email=${email}&password=${password}`)
+      const { access } = data;     
+      setAccess(access);
+      if(!access) throw Error()
+      access && navigate('/home');
+   } catch (error) {
+      alert('Revise sus credenciales de acceso' )
+   }
+}
 
   useEffect(() => {
     !access && navigate('/');
