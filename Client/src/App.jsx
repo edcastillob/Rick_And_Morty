@@ -9,7 +9,7 @@ import Favorites from './components/Favorites/Favorites';
 export function App() {
    
    const [characters, setCharacters] = useState([]); 
-   const [access, setAccess] = useState(true);   
+   const [access, setAccess] = useState(false);   
    
    const location = useLocation();
    const navigate = useNavigate();  

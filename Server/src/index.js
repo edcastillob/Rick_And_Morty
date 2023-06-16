@@ -8,7 +8,7 @@ conn.sync({ force: true })
          console.log(`Server raised in port: ${PORT}`);
       });   
     })
-    .catch(error => console.log(error.message, 'Sin conexion'));
+    .catch(error => console.log(error.message));
 
 
 
